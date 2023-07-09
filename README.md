@@ -1,2 +1,2 @@
-# PickwordSell
-This project is for PickwordSell Service
+# PickwordSell_Backend
+This project is for PickwordSell Back-end Service
