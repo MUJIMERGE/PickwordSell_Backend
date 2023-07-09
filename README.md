@@ -1,2 +1,2 @@
-# SyncronicationKo
-This project is for refactoring Syncronication App
+# PickwordSell
+This project is for PickwordSell Service
