@@ -8,8 +8,11 @@ import jakarta.persistence.*;
 public class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
+    @Column(nullable = false)
     private String title;
+    @Column(nullable = false)
     private String content;
     private String[] img;
+    @Column(nullable = false)
     private String memberEmail;
 }
