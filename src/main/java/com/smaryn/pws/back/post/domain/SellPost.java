@@ -10,7 +10,7 @@ public class SellPost extends Post {
     private String regionLarge;
     private String regionSmall;
     @Enumerated(EnumType.ORDINAL)
-    private ProductState productState;
+    private SellState sellState;
     private String categoryMain;
     private String categorySub;
 }
