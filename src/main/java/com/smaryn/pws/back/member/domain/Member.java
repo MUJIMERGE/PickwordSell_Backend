@@ -5,9 +5,9 @@ import jakarta.persistence.*;
 @Entity
 public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long userId;
+    private Long memberId;
     @Column(nullable = false)
-    private String email;
+    private String memberEmail;
     @Column(nullable = false)
     private String password;
     private String phoneNumber;
