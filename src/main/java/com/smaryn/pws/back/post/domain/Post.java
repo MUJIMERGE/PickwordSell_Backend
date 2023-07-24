@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn
-public class Post {
+public abstract class Post {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
     @Column(nullable = false)
