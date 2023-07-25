@@ -25,8 +25,15 @@ public class MemberService {
     /**
      * 이메일 중복 확인
      */
-    public boolean isNotDuplicateEmail(String memberEmail) {
-        return memberRepository.countByMemberEmail(memberEmail) == 0;
+    public boolean isDuplicateEmail(String memberEmail) {
+        return memberRepository.existsByMemberEmail(memberEmail);
+    }
+
+    /**
+     * 사용자 존재 여부 확인
+     */
+    public boolean isExistMember(Long memberId) {
+        return memberRepository.existsById(memberId);
     }
 
     /**
@@ -46,8 +53,12 @@ public class MemberService {
      * 회원 정보 변경, 비밀번호 초기화
      */
     public Optional<Member> updateMember(Member member) {
-        member = memberRepository.save(member);
-        return Optional.of(member);
+        if (member != null && isExistMember(member.getMemberId())) {
+            member = memberRepository.save(member);
+            return Optional.of(member);
+        } else {
+            return Optional.empty();
+        }
     }
 
     /**
@@ -55,6 +66,6 @@ public class MemberService {
      */
     public boolean deleteMember(Member member) {
         memberRepository.delete(member);
-        return isNotDuplicateEmail(member.getMemberEmail());
+        return !isDuplicateEmail(member.getMemberEmail());
     }
 }

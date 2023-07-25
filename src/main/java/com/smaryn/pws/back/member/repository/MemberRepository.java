@@ -9,7 +9,8 @@ public interface MemberRepository {
     Member save(Member member);
     Optional<Member> findById(Long id);
     Optional<Member> findByMemberEmail(String memberEmail);
-    Long countByMemberEmail(String memberEmail);
+    boolean existsById(Long id);
+    boolean existsByMemberEmail(String memberEmail);
     List<Member> findAll();
     void delete(Member member);
 }

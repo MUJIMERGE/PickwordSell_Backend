@@ -10,7 +10,6 @@ public class Member {
     private String memberEmail;
     @Column(nullable = false)
     private String password;
-    @Column(name="phoneNumber", nullable = false, unique = true)
     private String phoneNumber;
     private String regionLarge;
     private String regionSmall;
