@@ -8,5 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface JpaMemberRepository extends JpaRepository<Member, Long> {
-    Optional<Member> findByEmail(String memberEmail);
+    Optional<Member> findByMemberEmail(String memberEmail);
+    Long countByMemberEmail(String memberEmail);
 }
