@@ -158,8 +158,9 @@ public class MemberController {
         Date date = new Date(System.currentTimeMillis());
 
         try {
-            Member member = memberService.findMemberByEmail(requestMember.getMemberEmail()).orElseThrow();
-            if (member.getPhoneNumber().equals(requestMember.getPhoneNumber())) {
+            Member member = memberService.findMemberById(id).orElseThrow();
+            if (member.getMemberEmail().equals(requestMember.getMemberEmail())
+                    && member.getPhoneNumber().equals(requestMember.getPhoneNumber())) {
                 member.setPassword("initPassword"); // 임시 코드
                 member = memberService.updateMember(member).orElseThrow();
 
