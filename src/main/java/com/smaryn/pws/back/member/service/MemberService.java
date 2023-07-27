@@ -67,7 +67,11 @@ public class MemberService {
      */
     public boolean deleteMember(Long id) {
         Member member = findMemberById(id).orElse(new Member());
-        memberRepository.delete(member);
-        return !isDuplicateEmail(member.getMemberEmail());
+        if (member.getMemberEmail() == null) {
+            return false;
+        } else {
+            memberRepository.delete(member);
+            return !isDuplicateEmail(member.getMemberEmail());
+        }
     }
 }
