@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 public interface JpaSellPostRepository extends JpaRepository<SellPost, Long> {
     // @Query("select sp from SellPost sp where sp.") 쿼리는 나중에 정의
-    List<SellPost> findByFilter(SellPost sellPost, boolean isCheckSellState, int minPrice, int maxPrice);
+    // List<SellPost> findByFilter(SellPost sellPost, boolean isCheckSellState, int minPrice, int maxPrice);
 }

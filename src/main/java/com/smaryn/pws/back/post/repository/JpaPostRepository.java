@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface JpaPostRepository extends JpaRepository<Post, Long> {
-    List<Post> findByMemberEmail(Long memberEmail);
+    // List<Post> findByMemberEmail(Long memberEmail);
 }
