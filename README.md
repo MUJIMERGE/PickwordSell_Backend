@@ -1,5 +1,5 @@
 현재 개발 진행중인 Branch
-- PWSBACK-DEV-MS2 : 회원 기능 구현 중
+- PWSBACK-DEV-MS3 : 거래글 기능 구현 중
 - PWSBACK-PROTO-1 : PROTO1 구현 중
 
 [안드로이드 리포지토리](https://github.com/MUJIMERGE/PickwordSell_Android)
