@@ -37,16 +37,17 @@ public class MemberService {
     }
 
     /**
-     * 회원 로그인
+     * memberId 로 조회
      */
-    public Optional<Member> login(Member member) {
-        if (member == null) return Optional.empty();
-        Optional<Member> dbMember = memberRepository.findByMemberEmail(member.getMemberEmail());
-        if (dbMember.orElseGet(Member::new).getPassword().equals(member.getPassword())) {
-            return dbMember;
-        } else {
-            return Optional.empty();
-        }
+    public Optional<Member> findMemberById(Long id) {
+        return memberRepository.findById(id);
+    }
+
+    /**
+     * memberId 로 조회
+     */
+    public Optional<Member> findMemberByEmail(String email) {
+        return memberRepository.findByMemberEmail(email);
     }
 
     /**
@@ -64,7 +65,8 @@ public class MemberService {
     /**
      * 회원 탈퇴
      */
-    public boolean deleteMember(Member member) {
+    public boolean deleteMember(Long id) {
+        Member member = findMemberById(id).orElse(new Member());
         memberRepository.delete(member);
         return !isDuplicateEmail(member.getMemberEmail());
     }
