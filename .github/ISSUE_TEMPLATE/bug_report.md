@@ -18,6 +18,10 @@ assignees: ''
 3. Scroll down to '....'
 4. See error
 
+**[비고]**
+
+- 내용
+
 **[자료]**
 
 - 내용
