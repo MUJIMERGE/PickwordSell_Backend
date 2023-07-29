@@ -1,3 +1,12 @@
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: '사양변경'
+assignees: ''
+
+---
+
 **[목적]**
 
 - 내용
