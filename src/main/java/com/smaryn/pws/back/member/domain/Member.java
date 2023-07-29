@@ -4,14 +4,17 @@ import jakarta.persistence.*;
 
 @Entity
 public class Member {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(name = "member_id")
     private Long memberId;
-    @Column(name="memberEmail", nullable = false, unique = true)
+    @Column(name = "member_email", nullable = false, unique = true)
     private String memberEmail;
     @Column(nullable = false)
     private String password;
+    @Column(name = "phone_number")
     private String phoneNumber;
+    @Column(name = "region_large")
     private String regionLarge;
+    @Column(name = "region_small")
     private String regionSmall;
 
     public Long getMemberId() {
